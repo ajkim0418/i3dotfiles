@@ -50,8 +50,9 @@ Section "Monitor"
         Option  "Enable"        "True"
 EndSection
 ```
-3) This should now recognize the display once plugged in, and now you can continue configuring with xrandr the resolution of 
 where Identifier is the name of the connected display(s) from ```xrandr```
+
+3) This should now recognize the display once plugged in, and now you can continue configuring the resolution of the display using xrandr
 
 There is a custom script in the repo ("switchdisplays.sh") that updates the resolution and primary display once a new display is plugged in, and additional keybindings that move workspaces to different displays. Reloading i3 should execute this script.
 
