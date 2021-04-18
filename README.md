@@ -3,7 +3,7 @@ Config files and scripts for my Arch Linux environment. Set up to provide a full
 
 ## i3 configuration
 i3-wm can be downloaded from the package manager. The i3 config file should be placed in $HOME/.config/i3
-### Additional configurations
+### Additional configurations and troubleshooting
 
 #### Lock screens
 I use two lockscreens, **betterlockscreen** for single display and **multilockscreen** for multiple displays.
