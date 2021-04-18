@@ -26,6 +26,8 @@ If it's not at 96, change it using xrandr: ```xrandr --dpi 96```
 multilockscreen uses the configuration file at /usr/bin/multilockscreen. Copy the contents from multilockscreenCOPY to this file. 
 To update your wallpaper, run ```multilockscreen  -u <path to wallpaper>```
 
+There is a custom script in the repo ("lockscreendisplays.sh") that switches to the appropriate lockscreen based on single or multi display, and the script can be called in the i3config keybinding
+
 #### Enabling brightness keys in Arch i3
 For some distros, the screen brightness keys do not work for i3 out of the box. You can fix this by using the  ```light``` tool, which can be downloaded from your package manager. The general commands to is  ```light -A <value>``` to increase brightness and ```light -U <value>``` to decrease brightness
 You might notice that these commands won't run without sudo, to fix these try two things:
@@ -36,7 +38,7 @@ In your i3 config file, add the change brightness command for the keys  ```XF86M
 
 #### Multiple displays
 When plugging a laptop running i3 to an external display, i3 may not recognize the display out of the box, even though xrandr shows the display as connected. To automatically enable the display, you need to set some configuration in the ```/etc/X11/xorg.conf.d``` directory.
-1) Create a new file called ```11-monitor.conf``` in the directory (Or copy the contents from 11-monitorCOPY.conf to here)
+1) Create a new file called ```11-monitor.conf``` in the directory (Or move the file this repo to here)
 2) Paste the following:
 ``` Section "Monitor"
         Identifier "HDMI-2"
@@ -45,7 +47,8 @@ EndSection
 ```
 3) This should now recognize the display once plugged in, and now you can continue configuring with xrandr the resolution of 
 where Identifier is the name of the connected display(s) from ```xrandr```
-I wrote a custom script ("switchdisplays.sh") that updates the resolution and primary display once a new display is plugged in, and additional keybindings that move workspaces to different displays.
+
+There is a custom script in the repo ("switchdisplays.sh") that updates the resolution and primary display once a new display is plugged in, and additional keybindings that move workspaces to different displays. Reloading i3 should execute this script.
 
 ## Polybar configuration
 Polybar for Arch Linux is available in the AUR. This is using the latest stable [polybar](https://aur.archlinux.org/packages/polybar/) 
