@@ -34,6 +34,19 @@ You might notice that these commands won't run without sudo, to fix these try tw
 3) Reboot
 In your i3 config file, add the change brightness command for the keys  ```XF86MonBrightnessUp``` and ```XF86MonBrightnessDown```
 
+#### Multiple displays
+When plugging a laptop running i3 to an external display, i3 may not recognize the display out of the box, even though xrandr shows the display as connected. To automatically enable the display, you need to set some configuration in the ```/etc/X11/xorg.conf.d``` directory.
+1) Create a new file called ```11-monitor.conf``` in the directory (Or copy the contents from 11-monitorCOPY.conf to here)
+2) Paste the following:
+``` Section "Monitor"
+        Identifier "HDMI-2"
+        Option  "Enable"        "True"
+EndSection
+```
+3) This should now recognize the display once plugged in, and now you can continue configuring with xrandr the resolution of 
+where Identifier is the name of the connected display(s) from ```xrandr```
+I wrote a custom script ("switchdisplays.sh") that updates the resolution and primary display once a new display is plugged in, and additional keybindings that move workspaces to different displays.
+
 ## Polybar configuration
 Polybar for Arch Linux is available in the AUR. This is using the latest stable [polybar](https://aur.archlinux.org/packages/polybar/) 
 
