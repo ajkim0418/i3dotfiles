@@ -2,7 +2,7 @@
 Config files and scripts for my Arch Linux environment. Set up to provide a full desktop experience. Using i3wm, polybar, picom, rofi, betterlockscreen, multilockscreen 
 
 ## i3 configuration
-i3 can be downloaded from using the package manager. The i3 config file should be placed in $HOME/.config/i3
+i3-wm can be downloaded from the package manager. The i3 config file should be placed in $HOME/.config/i3
 ### Additional configurations
 
 #### Lock screens
