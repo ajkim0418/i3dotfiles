@@ -10,7 +10,7 @@ I use two lockscreens, **betterlockscreen** for single display and **multilocksc
 
 [Betterlockscreen](https://aur.archlinux.org/packages/betterlockscreen-git/) can be downloaded from the AUR, but because betterlockscreen is a fork of i3-color, you first need to download [i3-color](https://aur.archlinux.org/packages/i3lock-color/) to get the dependencies
 
-For FIRST TIME SETUP:
+##### For FIRST TIME SETUP:
 1) clone this [repository](https://github.com/pavanjadhaw/betterlockscreen) to get the .service configuration. 
 2) copy the betterlockscreen@.service file to your ```/etc/systemd/system``` directory
 3) Start the service: ```systemctl enable betterlockscreen@$USER```. This will ensure the lockscreen works when your machine is suspended and wakes from sleep.
@@ -18,7 +18,8 @@ The betterlockscreen configuration uses the configuration file in /usr/bin/bette
 4) To update your wallpaper, run ```betterlockscreen -u <path to wallpaper>```
 This should run some updates, and will use this wallpaper each time it is locked
 
-Fixing text and box misalignment
+##### Fixing text and box misalignment
+
 If the time and text is not aligned with the default box, it could be due to the DPI value.
 Find your current DPI value using ```xdpyinfo | grep -B 2 resolution```
 If it's not at 96, change it using xrandr: ```xrandr --dpi 96```
