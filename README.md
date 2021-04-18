@@ -5,12 +5,34 @@ Config files and scripts for my Arch Linux environment. Set up to provide a full
 i3 can be downloaded from using the package manager. The i3 config file should be placed in $HOME/.config/i3
 ### Additional configurations
 
+#### Lock screens
+I use two lockscreens, **betterlockscreen** for single display and **multilockscreen** for multiple displays
+[Betterlockscreen](https://aur.archlinux.org/packages/betterlockscreen-git/) can be downloaded from the AUR. But since betterlockscreen is a fork of i3-color, you first need to download [i3-color](https://aur.archlinux.org/packages/i3lock-color/)
+For FIRST TIME SETUP:
+1) clone this [repository](https://github.com/pavanjadhaw/betterlockscreen) to get the .service configuration. 
+2) copy the betterlockscreen@.service file to your ```/etc/systemd/system``` directory
+3) Start the service: ```systemctl enable betterlockscreen@$USER```. This will ensure the lockscreen works when your machine is suspended and wakes from sleep.
+The betterlockscreen configuration uses the configuration file in /usr/bin/betterlockscreen. Copy the contents from betterlockscreenCOPY to this file
+
+To update your wallpaper, run ```betterlockscreen -u <path to wallpaper>```
+This should run some updates, and will use this wallpaper each time it is locked
+
+Fixing text and box misalignment
+If the time and text is not aligned with the default box, it could be due to the DPI value.
+Find your current DPI value using ```xdpyinfo | grep -B 2 resolution```
+If it's not at 96, change it using xrandr: ```xrandr --dpi 96```
+
+[multilockscreen](https://aur.archlinux.org/packages/multilockscreen/) is a fork of betterlockscreen, but will support multiple displays, and can be downloaded from the AUR. If using betterlockscreen on multiple displays causes scaling issues, multilockscreen will fix it.
+multilockscreen uses the configuration file at /usr/bin/multilockscreen. Copy the contents from multilockscreenCOPY to this file. 
+To update your wallpaper, run ```multilockscreen  -u <path to wallpaper>```
 
 #### Enabling brightness keys in Arch i3
 For some distros, the screen brightness keys do not work for i3 out of the box. You can fix this by using the  ```light``` tool, which can be downloaded from your package manager. The general commands to is  ```light -A <value>``` to increase brightness and ```light -U <value>``` to decrease brightness
 You might notice that these commands won't run without sudo, to fix these try two things:
 1) Add yourself to the ```video``` group to get access to devices: usermod -aG <user> video
 2) Allow sudo to access /usr/bin/light without a password. Change to ```%wheel ALL=(ALL) NOPASSWD: /usr/bin/light``` in ```/etc/sudoers```
+3) Reboot
+In your i3 config file, add the change brightness command for the keys  ```XF86MonBrightnessUp``` and ```XF86MonBrightnessDown```
 
 ## Polybar configuration
 Polybar for Arch Linux is available in the AUR. This is using the latest stable [polybar](https://aur.archlinux.org/packages/polybar/) 
