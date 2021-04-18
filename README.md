@@ -6,7 +6,8 @@ i3-wm can be downloaded from the package manager. The i3 config file should be p
 ### Additional configurations
 
 #### Lock screens
-I use two lockscreens, **betterlockscreen** for single display and **multilockscreen** for multiple displays
+I use two lockscreens, **betterlockscreen** for single display and **multilockscreen** for multiple displays.
+
 [Betterlockscreen](https://aur.archlinux.org/packages/betterlockscreen-git/) can be downloaded from the AUR. But since betterlockscreen is a fork of i3-color, you first need to download [i3-color](https://aur.archlinux.org/packages/i3lock-color/)
 For FIRST TIME SETUP:
 1) clone this [repository](https://github.com/pavanjadhaw/betterlockscreen) to get the .service configuration. 
