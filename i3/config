@@ -38,11 +38,6 @@ exec_always --no-startup-id $HOME/.config/i3/touchpad.sh
 exec_always xmodmap $HOME/.config/i3/.Xmodmap
 
 #Enable brightness keys in Arch i3
-#pacman -S light
-#command: light to get value, light -A 5 to increase value by 5, light -U 5 to decrease value by 5. Must be ran in sudo
-#Set keybindings to thinkpad brightness keys
-#If still doesnt work, add yourself to group usermod -a -G andy video
-#REBOOT
 bindsym XF86MonBrightnessUp exec light -A 10
 bindsym XF86MonBrightnessDown exec light -U 10
 
@@ -51,28 +46,10 @@ bindsym XF86MonBrightnessDown exec light -U 10
 # download the picom-tyrone-git AUR
 exec_always --no-startup-id picom --config $HOME/.config/i3/picom.conf --experimental-backends
 
-#Lock screen: betterlockscreen
-# Because betterlockscreen is a fork of i3-color, we need to first download: https://aur.archlinux.org/i3lock-color.git
-# To download: https://aur.archlinux.org/betterlockscreen-git.git
-#FIRST TIME SETUP (This will ensure this works when machine is suspended and woken): 
-#1. git clone https://github.com/pavanjadhaw/betterlockscreen
-#2. cd to betterlockscreen/system. Copy the system file to your systemd folder: cp betterlockscreen@.service /etc/systemd/system/
-#3. Start service: systemctl enable betterlockscreen@$USER
-## To update wallpaper
-#1. betterlockscreen -u <path to wallpaper>
-#This should run some update, once finished, betterlockscreen -l will have your new wallpaper
-#IF you see time and text and gray box misaligned, it is due to your DPI value
 #Find your current dpi value using: xdpyinfo | grep -B 2 resolution
 #if not at 96, change to 96 with: xrandr --dpi 96
 # change betterlockscreen configuration at: /usr/bin/betterlockscreen
 #bindsym $mod+shift+x exec /usr/bin/betterlockscreen -l
-#
-# Multilockscreen: for multiple displays
-# git clone https://aur.archlinux.org/multilockscreen-git.git
-#cd multilockscreen-git
-#makepkg -si
-#usage: betterlockscreen -u <path to wallpaper> to update
-#betterlockscreen -l
 #original config at /usr/bin/multilockscreen
 bindsym $mod+shift+x exec /$HOME/.config/i3/lockscreendisplays.sh
 
