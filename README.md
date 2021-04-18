@@ -40,7 +40,8 @@ In your i3 config file, add the change brightness command for the keys  ```XF86M
 When plugging a laptop running i3 to an external display, i3 may not recognize the display out of the box, even though xrandr shows the display as connected. To automatically enable the display, you need to set some configuration in the ```/etc/X11/xorg.conf.d``` directory.
 1) Create a new file called ```11-monitor.conf``` in the directory (Or move the file this repo to here)
 2) Paste the following:
-``` Section "Monitor"
+``` 
+Section "Monitor"
         Identifier "HDMI-2"
         Option  "Enable"        "True"
 EndSection
