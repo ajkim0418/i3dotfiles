@@ -1,5 +1,5 @@
 # i3dotfiles
-Config files and scripts for my Arch Linux environment. Set up to provide a full desktop experience. Using i3wm, polybar, picom, rofi. 
+Config files and scripts for my Arch Linux environment. Set up to provide a full desktop experience. Using i3wm, polybar, picom, rofi, betterlockscreen, multilockscreen 
 
 ## i3 configuration
 i3 can be downloaded from using the package manager. The i3 config file should be placed in $HOME/.config/i3
@@ -40,7 +40,8 @@ In your i3 config file, add the change brightness command for the keys  ```XF86M
 When plugging a laptop running i3 to an external display, i3 may not recognize the display out of the box, even though xrandr shows the display as connected. To automatically enable the display, you need to set some configuration in the ```/etc/X11/xorg.conf.d``` directory.
 1) Create a new file called ```11-monitor.conf``` in the directory (Or move the file this repo to here)
 2) Paste the following:
-``` Section "Monitor"
+``` 
+Section "Monitor"
         Identifier "HDMI-2"
         Option  "Enable"        "True"
 EndSection
@@ -61,8 +62,9 @@ rofi -upgrade-config
 ```
 This will create the config file ~/.config/rofi/config.rasi. Replace it with the contents from my config.rasi file, and continue configuring from there.
 
+Tip: to edit the colors of rofi, get the color codes from https://comfoxx.github.io/rofi-old-generator/p11-Generator.html 
 ## Picom
-Picom is used as a compositor, to enable transparency/opacity in windows. This one is using the [picom-tyrone fork](https://aur.archlinux.org/packages/picom-tryone-git/), which can be downloaded from the AUR. The regular picom does not support blue methods like dual_kawase.
+Picom is used as a compositor to enable transparency/opacity in windows. This one is using the [picom-tyrone fork](https://aur.archlinux.org/packages/picom-tryone-git/), which can be downloaded from the AUR. The regular picom does not support certain blur methods like dual_kawase.
 To make windows/applications opaque, add them to the ```opacity-rule[]; ``` block
 Tip, to find the class name, I use the  ```xprop``` tool, which can be downloaded from your package manager as xorg-xprop. When you run xprop, you can click on any window to get the application information. The class name should be in the "WM_CLASS(STRING)" variable. There's usually two values, use the second value if the first value doesn't work.
 
