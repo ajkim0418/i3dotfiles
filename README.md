@@ -63,7 +63,7 @@ rofi -upgrade-config
 This will create the config file ~/.config/rofi/config.rasi. Replace it with the contents from my config.rasi file, and continue configuring from there.
 
 ## Picom
-Picom is used as a compositor, to enable transparency/opacity in windows. This one is using the [picom-tyrone fork](https://aur.archlinux.org/packages/picom-tryone-git/), which can be downloaded from the AUR. The regular picom does not support blue methods like dual_kawase.
+Picom is used as a compositor to enable transparency/opacity in windows. This one is using the [picom-tyrone fork](https://aur.archlinux.org/packages/picom-tryone-git/), which can be downloaded from the AUR. The regular picom does not support certain blur methods like dual_kawase.
 To make windows/applications opaque, add them to the ```opacity-rule[]; ``` block
 Tip, to find the class name, I use the  ```xprop``` tool, which can be downloaded from your package manager as xorg-xprop. When you run xprop, you can click on any window to get the application information. The class name should be in the "WM_CLASS(STRING)" variable. There's usually two values, use the second value if the first value doesn't work.
 
