@@ -62,6 +62,7 @@ rofi -upgrade-config
 ```
 This will create the config file ~/.config/rofi/config.rasi. Replace it with the contents from my config.rasi file, and continue configuring from there.
 
+Tip: to edit the colors of rofi, get the color codes from https://comfoxx.github.io/rofi-old-generator/p11-Generator.html 
 ## Picom
 Picom is used as a compositor to enable transparency/opacity in windows. This one is using the [picom-tyrone fork](https://aur.archlinux.org/packages/picom-tryone-git/), which can be downloaded from the AUR. The regular picom does not support certain blur methods like dual_kawase.
 To make windows/applications opaque, add them to the ```opacity-rule[]; ``` block
