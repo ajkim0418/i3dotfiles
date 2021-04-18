@@ -36,7 +36,7 @@ For some distros, the screen brightness keys do not work for i3 out of the box. 
 You might notice that these commands won't run without sudo, to fix these try two things:
 1) Add yourself to the ```video``` group to get access to devices: ```usermod -aG <user> video```
 2) Allow sudo to access /usr/bin/light without a password. Change to ```%wheel ALL=(ALL) NOPASSWD: /usr/bin/light``` in ```/etc/sudoers```
-3) Reboot
+3) Reboot after making these changes
 
 In your i3 config file, add the change brightness command for the keys  ```XF86MonBrightnessUp``` and ```XF86MonBrightnessDown```
 
