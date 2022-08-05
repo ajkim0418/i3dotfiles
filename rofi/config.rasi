@@ -1,12 +1,7 @@
 configuration {
 /*	modi: "window,run,ssh";*/
-	width: 100;
-	lines: 5;
-	columns: 1;
 	font: "System San Francisco Display 16";
-	bw: 0;
 /*	location: 0;*/
-	padding: 400;
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
@@ -32,7 +27,8 @@ configuration {
 /*	case-sensitive: false;*/
 /*	cycle: true;*/
 /*	sidebar-mode: false;*/
-	eh: 2;
+/*	hover-select: false;*/
+/*	eh: 1;*/
 /*	auto-select: false;*/
 /*	parse-hosts: false;*/
 /*	parse-known-hosts: true;*/
@@ -40,36 +36,23 @@ configuration {
 /*	matching: "normal";*/
 /*	tokenize: true;*/
 /*	m: "-5";*/
-/*	line-margin: 2;*/
-/*	line-padding: 1;*/
 /*	filter: ;*/
-/*	separator-style: "dash";*/
-/*	hide-scrollbar: false;*/
-/*	fullscreen: false;*/
-/*	fake-transparency: false;*/
 /*	dpi: -1;*/
 /*	threads: 0;*/
-/*	scrollbar-width: 8;*/
 /*	scroll-method: 0;*/
-/*	fake-background: "screenshot";*/
 /*	window-format: "{w}    {c}   {t}";*/
 /*	click-to-exit: true;*/
-/*	show-match: true;*/
-/*	theme: ;*/
-	/* https://comfoxx.github.io/rofi-old-generator/p11-Generator.html */
-		      /*background, text color, background, highlight color, highlighted text color*/
-	color-normal: "#5c5c5c, #ffffff, #5c5c5c, #46b2d2, #ffffff";
-	color-urgent: "#5c5c5c, #ffffff, #5c5c5c, #999999, #ffffff";
-	color-active: "#5c5c5c, #ffffff, #5c5c5c, #999999, #ffffff";
-	color-window: "#5c5c5c, #5c5c5c, #8b8989";
 /*	max-history-size: 25;*/
 /*	combi-hide-mode-prefix: false;*/
+/*	combi-display-format: "{mode} {text}";*/
 /*	matching-negate-char: '-' /* unsupported */;*/
 /*	cache-dir: ;*/
 /*	window-thumbnail: false;*/
 /*	drun-use-desktop-cache: false;*/
 /*	drun-reload-desktop-cache: false;*/
 /*	normalize-match: false;*/
+/*	steal-focus: false;*/
+/*	application-fallback-icon: ;*/
 /*	pid: "/run/user/1000/rofi.pid";*/
 /*	display-window: ;*/
 /*	display-windowcd: ;*/
@@ -78,7 +61,7 @@ configuration {
 /*	display-drun: ;*/
 /*	display-combi: ;*/
 /*	display-keys: ;*/
-/*	display-file-browser: ;*/
+/*	display-filebrowser: ;*/
 /*	kb-primary-paste: "Control+V,Shift+Insert";*/
 /*	kb-secondary-paste: "Control+v,Insert";*/
 /*	kb-clear-line: "Control+w";*/
@@ -96,10 +79,12 @@ configuration {
 /*	kb-remove-to-sol: "Control+u";*/
 /*	kb-accept-entry: "Control+j,Control+m,Return,KP_Enter";*/
 /*	kb-accept-custom: "Control+Return";*/
+/*	kb-accept-custom-alt: "Control+Shift+Return";*/
 /*	kb-accept-alt: "Shift+Return";*/
 /*	kb-delete-entry: "Shift+Delete";*/
 /*	kb-mode-next: "Shift+Right,Control+Tab";*/
 /*	kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab";*/
+/*	kb-mode-complete: "Control+l";*/
 /*	kb-row-left: "Control+Page_Up";*/
 /*	kb-row-right: "Control+Page_Down";*/
 /*	kb-row-up: "Up,Control+p,ISO_Left_Tab";*/
@@ -151,4 +136,30 @@ configuration {
 /*	me-select-entry: "MousePrimary";*/
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+listview {
+	lines: 5;
+	columns: 1;
+	border-color: SteelBlue;
+}
+
+
+entry, element-text {
+        background-color: SteelBlue;
+	placeholder-color: SteelBlue;
+	border-color: SteelBlue;
+}
+
+window {
+	width: 100%;
+	padding: 400;
+	background-color: SteelBlue;
 }
