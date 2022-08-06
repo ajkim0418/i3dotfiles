@@ -18,7 +18,7 @@
 
 ;For custom fonts, go to https://fontawesome.com/cheatsheet/free/solid, copy a font and paste to appropriate variable
 
-;download the font: pacman -S ttf-font-awesomw
+;download the font: pacman -S ttf-font-awesome
 ;In terminal: fc-list | grep awesome
 ; add one of these fonts as font-0 in config
 ;
@@ -69,7 +69,8 @@ module-margin-right = 2
 
 # For text, uses font awesome 4 from AUR
 # git clone https://aur.archlinux.org/ttf-font-awesome-4.git
-font-0 = FontAwesome:style=Regular:size=10;1
+;font-0 = FontAwesome:style=Regular:size=10;1
+font-0 = /usr/share/fonts/TTF/fontawesome-webfont.ttf: FontAwesome:style=Regular:size=8;1
 ;font-0 = Font Awesome 5 Free,Font Awesome 5 Free Regular:style=Regular
 font-1 = FontAwesome:fontformat=truetype:size=8;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
@@ -264,7 +265,8 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp4s0
+; interface value will depend on your network interface of your current connected wifi. To find out, nmcli device status
+interface =wlan0 
 interval = 3.0
 
 
@@ -321,7 +323,7 @@ type = internal/pulseaudio
 label-volume =   %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 
+label-muted =  muted
 label-muted-foreground = ${root.foreground}
 
 
